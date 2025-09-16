@@ -1,7 +1,11 @@
-import "./App.css";
-
+import './App.css';
+import Steps from './Steps';
 function App() {
-  return <></>;
+  return (
+    <>
+      <Steps />
+    </>
+  );
 }
 
 export default App;
