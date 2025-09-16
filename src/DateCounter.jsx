@@ -1,14 +1,5 @@
 import { useState } from 'react';
 import Button from './Button';
-const days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
 
 const DateCounter = () => {
   const [count, setCount] = useState(0);
@@ -28,11 +19,9 @@ const DateCounter = () => {
     return setCount(prev => prev - step);
   };
   const today = new Date();
-  const date = new Date(today).getDate();
+  const newDate = new Date(today);
+  newDate.setDate(today.getDate() + count);
 
-  const day = days[today.getDay()];
-
-  console.log(date, day);
   return (
     <div className="dateContainer">
       <div className="stepContainer">
@@ -46,7 +35,14 @@ const DateCounter = () => {
         <Button text="+" onClick={handleCountIncrease} />
       </div>
       <div className="date">
-        <p>Today is: {date}</p>
+        <span>
+          {count === 0
+            ? `Today is ${today.toDateString()}`
+            : count > 0
+            ? `${count} days after today is `
+            : `${Math.abs(count)} days before today is `}
+        </span>
+        <span>{newDate.toDateString()}</span>
       </div>
     </div>
   );
