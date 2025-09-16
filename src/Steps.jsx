@@ -10,6 +10,7 @@ const Steps = () => {
   const [step, setStep] = useState(1);
   const [isOpen, setOpen] = useState(true);
 
+  //in setOpen, setState always use callback
   const handleIncreaseStep = () =>
     setStep(curStep => (curStep >= messages.length ? 1 : curStep + 1));
 
@@ -17,7 +18,7 @@ const Steps = () => {
     setStep(curStep => (curStep <= 1 ? messages.length : curStep - 1));
 
   const handleOpen = () => {
-    setOpen(!isOpen);
+    setOpen(currState => !currState);
   };
   return (
     <div>
