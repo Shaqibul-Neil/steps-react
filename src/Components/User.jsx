@@ -11,6 +11,7 @@ const User = ({ user }) => {
     email,
     zip,
     id,
+    photo,
   } = user;
 
   const userName = str => {
@@ -33,9 +34,11 @@ const User = ({ user }) => {
     <div className="text-center">
       <h2 className="title">Profile : {id}</h2>
       <div className="user">
-        <div className="user-info">
-          <h2 className="title details">Name</h2>
-          <h2 className="title dot">:</h2>
+        <div className="flex justify-center gap-8 items-center">
+          <div className="w-24 h-24 rounded-full border-2 border-red-200 overflow-hidden">
+            <img src={photo} alt="" className="w-full h-full object-cover" />
+          </div>
+
           <h2 className="title user-text">{userName(name)}</h2>
         </div>
         <>
