@@ -1,5 +1,5 @@
 const User = ({ user }) => {
-  console.log(user);
+  //console.log(user);
   const {
     name,
     company,
@@ -18,7 +18,7 @@ const User = ({ user }) => {
     const arr = str.split(' ');
     return `${arr[0]} ${arr[1]}`;
   };
-  console.log(userName(name));
+  //console.log(userName(name));
 
   // All label-value pairs in an array
   const userInfos = [

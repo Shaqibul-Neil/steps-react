@@ -2,7 +2,7 @@ import { use } from 'react';
 import User from './User';
 const Users = ({ userPromise }) => {
   const users = use(userPromise);
-  console.log(users);
+  //console.log(users);
 
   return (
     <div className="usersContainer">

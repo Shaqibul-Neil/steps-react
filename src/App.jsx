@@ -2,6 +2,7 @@ import './App.css';
 import Steps from './Steps';
 import DateCounter from './DateCounter';
 import Users from './Components/Users';
+import Effect from './Components/Effect';
 import { Suspense } from 'react';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
       <DateCounter />
       <Suspense fallback={'Loading...'}>
         <Users userPromise={userPromise} />
+      </Suspense>
+      <Suspense fallback={'Loading...'}>
+        <Effect />
       </Suspense>
     </>
   );
